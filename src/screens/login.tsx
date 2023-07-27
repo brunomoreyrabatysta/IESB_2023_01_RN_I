@@ -9,9 +9,42 @@ const Login = () => {
     const [address, setAddress] = useState<String>('');
 
     const save = () => {
+        if (name == '') {
+            Alert.alert('Alerta', `O campo "nome" é preenchimento obrigatório.`);
+            return;            
+        } else if (name.length < 3) {
+            Alert.alert('Alerta', `O campo "nome" deve ter no mínimo 3 (três) caracteres.`);
+            return;                        
+        }
+
+        if (mail == '') {
+            Alert.alert('Alerta', `O campo "e-mail" é preenchimento obrigatório.`);
+            return;            
+        } else if (mail.length < 3) {
+            Alert.alert('Alerta', `O campo "e-mail" deve ter no mínimo 3 (três) caracteres.`);
+            return;                        
+        }
+
+        if (phone == '') {
+            Alert.alert('Alerta', `O campo "telefone" é preenchimento obrigatório.`);
+            return;            
+        } else if (phone.length < 3) {
+            Alert.alert('Alerta', `O campo "telefone" deve ter no mínimo 3 (três) caracteres.`);
+            return;                        
+        }
+
+        if (address == '') {
+            Alert.alert('Alerta', `O campo "endereço" é preenchimento obrigatório.`);
+            return;            
+        } else if (address.length < 3) {
+            Alert.alert('Alerta', `O campo "endereço" deve ter no mínimo 3 (três) caracteres.`);
+            return;                        
+        }
+
+
         Alert.alert('Sucesso', `Cadastro realizado com sucesso!\n\nNome: ${name}.\ne-mail: ${mail}.\nTelefone: ${phone}.\nEndereço: ${address}.`);
     };
-
+    
     return (
         <ScrollView style={ styles.container } contentContainerStyle={{ flexGrow: 1 }}>
             <SafeAreaView />
