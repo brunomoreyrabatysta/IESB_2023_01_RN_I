@@ -9,40 +9,37 @@ const Login = () => {
     const [address, setAddress] = useState<String>('');
 
     const save = () => {
+        let mensagem = "";
+
         if (name == '') {
-            Alert.alert('Alerta', `O campo "nome" é preenchimento obrigatório.`);
-            return;            
+            mensagem = mensagem + `O campo "nome" é preenchimento obrigatório.\n`;                        
         } else if (name.length < 3) {
-            Alert.alert('Alerta', `O campo "nome" deve ter no mínimo 3 (três) caracteres.`);
-            return;                        
+            mensagem = mensagem + `O campo "nome" deve ter no mínimo 3 (três) caracteres.\n`;            
         }
 
         if (mail == '') {
-            Alert.alert('Alerta', `O campo "e-mail" é preenchimento obrigatório.`);
-            return;            
+            mensagem = mensagem + `O campo "e-mail" é preenchimento obrigatório.\n`;
         } else if (mail.length < 3) {
-            Alert.alert('Alerta', `O campo "e-mail" deve ter no mínimo 3 (três) caracteres.`);
-            return;                        
+            mensagem = mensagem + `O campo "e-mail" deve ter no mínimo 3 (três) caracteres.\n`;
         }
 
         if (phone == '') {
-            Alert.alert('Alerta', `O campo "telefone" é preenchimento obrigatório.`);
-            return;            
+            mensagem = mensagem + `O campo "telefone" é preenchimento obrigatório.\n`;
         } else if (phone.length < 3) {
-            Alert.alert('Alerta', `O campo "telefone" deve ter no mínimo 3 (três) caracteres.`);
-            return;                        
+            mensagem = mensagem + `O campo "telefone" deve ter no mínimo 3 (três) caracteres.\n`;
         }
 
         if (address == '') {
-            Alert.alert('Alerta', `O campo "endereço" é preenchimento obrigatório.`);
-            return;            
+            mensagem = mensagem + `O campo "endereço" é preenchimento obrigatório.\n`;
         } else if (address.length < 3) {
-            Alert.alert('Alerta', `O campo "endereço" deve ter no mínimo 3 (três) caracteres.`);
-            return;                        
+            mensagem = mensagem + `O campo "endereço" deve ter no mínimo 3 (três) caracteres.\n`;
         }
 
-
-        Alert.alert('Sucesso', `Cadastro realizado com sucesso!\n\nNome: ${name}.\ne-mail: ${mail}.\nTelefone: ${phone}.\nEndereço: ${address}.`);
+        if (mensagem != '') {
+            Alert.alert('Atenção', mensagem);    
+        } else {
+            Alert.alert('Sucesso', `Cadastro realizado com sucesso!\n\nNome: ${name}.\ne-mail: ${mail}.\nTelefone: ${phone}.\nEndereço: ${address}.`);
+        }        
     };
     
     return (
